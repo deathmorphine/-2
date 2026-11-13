@@ -1,0 +1,102 @@
+/* Лабораторна робота №2 — CSS-селектори. Павлов Іван. */
+/* Вихідний lab2.html не змінюється. */
+
+/* Оформлення сторінки */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  color: #1e293b;
+  background: #edf4ff;
+  line-height: 1.6;
+}
+header, .container, section, footer {
+  max-width: 1050px;
+  margin: 20px auto;
+  padding: 28px;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 8px 26px rgba(30, 64, 175, 0.1);
+}
+h1, h2 { color: #1d4ed8; }
+nav ul { display: flex; flex-wrap: wrap; gap: 14px 28px; }
+.box {
+  margin: 20px 0;
+  padding: 18px;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  background: #eff6ff;
+}
+form {
+  max-width: 560px;
+  padding: 20px;
+  margin-top: 22px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+label { display: block; margin: 12px 0 5px; }
+input {
+  max-width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+input:not([type="checkbox"]) { display: block; width: 100%; }
+input[type="checkbox"] { width: 20px; height: 20px; cursor: pointer; }
+
+/* 1. Перший елемент li — жирний шрифт */
+li:first-child { font-weight: bold; }
+
+/* 2. Посилання a, що є останніми дочірніми елементами, — червоні */
+a:last-child { color: red; }
+
+/* 3. Вимкнені input — сірий фоновий колір */
+input:disabled { background-color: gray; }
+
+/* 4. Прямі дочірні p елемента div — напівжирні */
+div > p { font-weight: 600; }
+
+/* 5. Посилання, href яких починається з https, — зелені */
+a[href^="https"] { color: green; }
+
+/* 6. input типу text — рамка 1px синього кольору */
+input[type="text"] { border: 1px solid blue; }
+
+/* 7. Перші й останні li — шрифт 24px */
+li:first-child, li:last-child { font-size: 24px; }
+
+/* 8. Елементи p всередині div — шрифт 16px */
+div p { font-size: 16px; }
+
+/* 9. Позначені input — світло-блакитний фон */
+input:checked { background-color: lightblue; accent-color: lightblue; }
+
+/* 10. Посилання a, що є прямими дочірніми li, — підкреслені */
+li > a { text-decoration: underline; }
+
+/* 11. Парні li в межах батьківського елемента — жирні */
+li:nth-child(even) { font-weight: bold; }
+
+/* 12. input type=text, що не disabled, — сірий фон */
+input[type="text"]:not(:disabled) { background-color: #d1d5db; }
+
+/* 13. p, що є першими дочірніми елементами, — шрифт 24px */
+p:first-child { font-size: 24px; }
+
+/* 14. li відразу після .special — перекреслений */
+.special + li { text-decoration: line-through; }
+
+/* 15. Перша літера кожного p — 36px */
+p::first-letter { font-size: 36px; }
+
+/* 16. Стрілка після кожного a */
+a::after { content: " ↗"; }
+
+@media (max-width: 600px) {
+  body { padding: 10px; }
+  header, .container, section, footer { padding: 16px; }
+  nav ul { display: block; }
+}
